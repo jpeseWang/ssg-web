@@ -1,0 +1,11 @@
+header div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+  
+header span {
+    display: block;
+    text-align: center;
+}
