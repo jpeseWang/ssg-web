@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentfulService } from '../../services';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +6,7 @@ import { ContentfulService } from '../../services';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-  constructor(private contentfulService: ContentfulService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.contentfulService.getAllEntries();
-  }
+  ngOnInit() {}
 }

@@ -1,0 +1,9 @@
+<main *ngIf="blogPosts | async as blogPosts">
+  <pre>
+        {{ blogPosts | json }}
+    </pre
+  >
+  <div class="blog-posts-container" *ngFor="let blogPost of blogPosts.items">
+    {{ blogPost.fields.coverImage.fields }}
+  </div>
+</main>
