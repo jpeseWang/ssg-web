@@ -3,22 +3,33 @@
     margin: 0 auto; 
     margin-bottom: 75px;
     padding: 15px;
-    background-color: #d4d0d0;
+    background-color: transparent !important;
     margin-top: 100px;
     overflow: hidden;
+    border-radius: 10px;
 }
 
 .post-container img {
     width: 100%;
     margin-bottom: 20px;
+    border-radius: 20px;
 }
 
-.post-container h2 {
+.post-container h1 {
     margin-bottom: 20px;
     padding: 0 20px;
+    align-items: center;
+    font-size: xxx-large;
 }
 
 .post-container p {
     margin-bottom: 20px;
     padding: 0 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.post-container .author {
+    margin-bottom: 20px;
+    font-style: italic;
+    color: rgb(93, 92, 90);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

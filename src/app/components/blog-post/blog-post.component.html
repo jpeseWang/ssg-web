@@ -1,11 +1,12 @@
 <main *ngIf="blogPost$ | async as blogPost">
   <div class="post-container">
-    <img [src]="$any(blogPost).fields.featuredImage.fields.file.url" />
-    <h2>
+    <h1>
       {{ $any(blogPost).fields.title }}
-    </h2>
+    </h1>
+    <img [src]="$any(blogPost).fields.featuredImage.fields.file.url" />
+    
 
-    <p class="author">{{ $any(blogPost).fields.author }}</p>
+    <p class="author">Posted by @{{ $any(blogPost).fields.author }}</p>
     <p class="content">
       {{ $any(blogPost).fields.content.content[0].content[0].value }}
     </p>
