@@ -1,9 +1,12 @@
 <main *ngIf="blogPosts$ | async as blogPosts">
   <div class="blog-posts-container" *ngFor="let blogPost of blogPosts.items">
     <img [src]="blogPost.fields.featuredImage.fields.file.url" />
-    <h2>{{ blogPost.fields.title }}</h2>
+    <h2>
+      <a [routerLink]="blogPost.sys.id">{{ blogPost.fields.title }}</a>
+    </h2>
+
     <p class="author">{{ blogPost.fields.author }}</p>
     <p class="summary">{{ blogPost.fields.summary }}</p>
-    <a href="#">Read more</a>
+    <a [routerLink]="blogPost.sys.id">Read more</a>
   </div>
 </main>

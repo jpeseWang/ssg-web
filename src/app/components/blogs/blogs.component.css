@@ -5,6 +5,7 @@
     padding: 15px;
     background-color: #d4d0d0;
     border-radius: 20px;
+    position: relative;
 }
 
 .blog-posts-container img {
@@ -22,13 +23,20 @@
 
 .blog-posts-container .summary {
     margin-bottom: 20px;
+    font-size: 14px;
 }
 
-.blog-posts-container a {
+.blog-posts-container a:not(:nth-child(1)) {
     text-decoration: none;
     background-color: green;
     color: darkblue;
     padding: 10px 10px;
     border-radius: 2px;
     display: inline-block;
+    justify-content: flex-end;
+}
+
+.blog-posts-container a{
+    text-decoration: none;
+    color: #470145;
 }

@@ -11,6 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BlogPostComponent } from './components/blog-post/blog-post.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { FooterComponent } from './components/footer/footer.component';
     BlogsComponent,
     NavbarComponent,
     FooterComponent,
+    BlogPostComponent,
   ],
   imports: [
     BrowserModule,

@@ -17,4 +17,8 @@ export class ContentfulService {
   getAllEntries() {
     return from(this.client.getEntries());
   }
+
+  getEntryById(id: string) {
+    return from(this.client.getEntry(id));
+  }
 }
