@@ -1,16 +1,21 @@
+
+
 .blog-posts-container {
     max-width: 800px;
     margin: 0 auto; 
     margin-bottom: 75px;
     padding: 15px;
-    background-color: #d4d0d0;
-    border-radius: 20px;
+    background-color: transparent;
+    border-radius: 30px;
     position: relative;
+    border: 2px solid #000000;
+    margin-top: 5%;
 }
 
 .blog-posts-container img {
     width: 100%;
     margin-bottom: 20px;
+    border-radius: 30px;
 }
 
 .blog-posts-container h2 {
@@ -19,24 +24,38 @@
 
 .blog-posts-container .author {
     margin-bottom: 20px;
+    font-style: italic;
+    color: rgb(93, 92, 90);
 }
 
 .blog-posts-container .summary {
     margin-bottom: 20px;
-    font-size: 14px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
 }
-
-.blog-posts-container a:not(:nth-child(1)) {
-    text-decoration: none;
-    background-color: green;
-    color: darkblue;
-    padding: 10px 10px;
-    border-radius: 2px;
-    display: inline-block;
+.blog-posts-container a .button {
+    display: flex;
     justify-content: flex-end;
 }
-
-.blog-posts-container a{
+.blog-posts-container a:not(:nth-child(1)) {
     text-decoration: none;
-    color: #470145;
+    background-image: linear-gradient(to right, #8360c3, #1a90d0);
+    color: white;
+    padding: 10px 10px;
+    border-radius: 50px;
+    display: inline-block;
+    justify-content: flex-end;
+    font-weight: 600;
+}
+
+.blog-posts-container a:nth-child(1){
+    text-decoration: none;
+    color: #060606;
+    font-family: 'Playfair', serif;
+    font-size: xxx-large;
+}
+.blog-posts-container a:not(:nth-child(1)):hover{
+    background-color: rgb(245, 25, 208);
+    
+    
 }

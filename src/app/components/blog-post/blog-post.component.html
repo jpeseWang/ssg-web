@@ -1,13 +1,13 @@
 <main *ngIf="blogPost$ | async as blogPost">
   <div class="post-container">
-    <img [src]="blogPost.fields.featuredImage.fields.file.url" />
+    <img [src]="$any(blogPost).fields.featuredImage.fields.file.url" />
     <h2>
-      {{ blogPost.fields.title }}
+      {{ $any(blogPost).fields.title }}
     </h2>
 
-    <p class="author">{{ blogPost.fields.author }}</p>
+    <p class="author">{{ $any(blogPost).fields.author }}</p>
     <p class="content">
-      {{ blogPost.fields.content.content[0].content[0].value }}
+      {{ $any(blogPost).fields.content.content[0].content[0].value }}
     </p>
   </div>
 </main>
