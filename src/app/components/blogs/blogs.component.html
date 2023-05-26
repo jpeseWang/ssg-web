@@ -1,9 +1,9 @@
-<main *ngIf="blogPosts | async as blogPosts">
-  <pre>
-        {{ blogPosts | json }}
-    </pre
-  >
+<main *ngIf="blogPosts$ | async as blogPosts">
   <div class="blog-posts-container" *ngFor="let blogPost of blogPosts.items">
-    {{ blogPost.fields.coverImage.fields }}
+    <img [src]="blogPost.fields.featuredImage.fields.file.url" />
+    <h2>{{ blogPost.fields.title }}</h2>
+    <p class="author">{{ blogPost.fields.author }}</p>
+    <p class="summary">{{ blogPost.fields.summary }}</p>
+    <a href="#">Read more</a>
   </div>
 </main>
