@@ -73,3 +73,28 @@
     
     
 }
+svg{
+    display: inline;
+    width: 5%;
+    height: auto;
+    padding-right: 5px
+}
+a:not(:nth-child(1)){
+    margin-left: 82%;
+    
+   
+}
+.blog-posts-container .line {
+    display: flex;
+    align-items: center;
+  }
+  
+  .blog-posts-container .line svg {
+    width: 5%;
+    height: auto;
+    padding-right: 5px;
+  }
+  
+  .blog-posts-container .line .read-more-link {
+    margin-left: auto;
+  }

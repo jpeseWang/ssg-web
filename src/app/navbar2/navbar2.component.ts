@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-navbar2',
+  templateUrl: './navbar2.component.html',
+  styleUrls: ['./navbar2.component.css']
 })
-export class NavbarComponent {
+export class Navbar2Component {
+  constructor() { }
   menu_icon_variable: boolean = false;
   menuVariable: boolean = false;
   ngOnInit(): void {
@@ -14,4 +15,5 @@ export class NavbarComponent {
     this.menuVariable =! this.menuVariable;
     this.menu_icon_variable =! this.menu_icon_variable;
   }
+
 }

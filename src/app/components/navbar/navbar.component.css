@@ -30,10 +30,10 @@ header{
 .logo, h1{
     cursor: pointer;
     margin-right: auto;
-    
+
     display: flex;
-    order: 3
-    
+    order: 3;
+   margin-right: -100px;
 }
 nav{
     order: 1;

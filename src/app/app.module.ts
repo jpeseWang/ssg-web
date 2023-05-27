@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BlogPostComponent } from './components/pages/blog-post/blog-post.component';
 import { LoginComponent } from './components/authentication/login/login.component';
 import { SignupComponent } from './components/authentication/signup/signup.component';
+import { Navbar2Component } from './navbar2/navbar2.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SignupComponent } from './components/authentication/signup/signup.compo
     BlogPostComponent,
     LoginComponent,
     SignupComponent,
+    Navbar2Component,
   ],
   imports: [
     BrowserModule,
