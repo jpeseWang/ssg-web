@@ -68,7 +68,7 @@
     font-family: 'Playfair', serif;
     font-size: xxx-large;
 }
-.blog-posts-container a:not(:nth-child(1)):hover{
+.read-more-link:hover{
     background-color: rgb(245, 25, 208);
     
     
@@ -79,6 +79,7 @@ svg{
     height: auto;
     padding-right: 5px
 }
+
 a:not(:nth-child(1)){
     margin-left: 82%;
     
@@ -98,3 +99,44 @@ a:not(:nth-child(1)){
   .blog-posts-container .line .read-more-link {
     margin-left: auto;
   }
+  
+  .heart-button {
+    
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-right: 10px;
+  }
+  
+  .heart-button i {
+    font-size: 28px;
+    color: #ff0000;
+    transition: color 0.3s;
+    
+  }
+  
+  .heart-button i:hover {
+    color: #ff5f5f;
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  }
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+  

@@ -3,16 +3,22 @@
     <div class="logo">
       <img src="../../../assets/images/logo.png" alt="" />
       <h1>Heart2heart</h1>
-    </div></a
-  >
-  
+    </div></a>
+    <div class="menu_icon" [class.menu_iconClass]="menu_icon_variable" (click)="openMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+  </div>
   <nav>
+    <div class="menu" [class.menuClasse]="menuVariable">
     <ul class="nav_links">
-      <li><a href="#">Home</a></li>
-      <li><a [routerLink]="['blogs']">Blogs</a></li>
-      <li><a href="#">About us</a></li>
-      <li><a [routerLink]="['/auth/signup']">Sign up</a></li>
-    </ul>
+      <li [class.active]="isRouteActive('/')"><a href="#">Home</a></li>
+      <li [class.active]="isRouteActive('blogs')"><a [routerLink]="['blogs']">Blogs</a></li>
+      <li [class.active]="isRouteActive('about')"><a href="#">About us</a></li>
+      <li [class.active]="isRouteActive('/auth/signup')"><a [routerLink]="['/auth/signup']">Sign up</a></li>
+      <li [class.active]="isRouteActive('login')"><a [routerLink]="['/auth/login']"><button>Login</button></a></li>
+      
+    </ul></div>
   </nav>
-  <a [routerLink]="['/auth/login']" class="cta"><button>Login</button></a>
+  
 </header>

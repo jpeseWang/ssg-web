@@ -122,3 +122,6 @@ button:hover{
     0 0 50px rgb(245, 25, 208),
     0 0 90px rgb(245, 25, 208);
 }
+input:not(:placeholder-shown) + label{
+    top: -5px;
+}

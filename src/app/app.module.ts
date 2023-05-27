@@ -12,7 +12,8 @@ import { BlogsComponent } from './components/pages/blogs/blogs.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BlogPostComponent } from './components/pages/blog-post/blog-post.component';
-import { Navbar2Component } from './navbar2/navbar2.component';
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { Navbar2Component } from './navbar2/navbar2.component';
     NavbarComponent,
     FooterComponent,
     BlogPostComponent,
-    Navbar2Component,
+
   ],
   imports: [
     BrowserModule,
