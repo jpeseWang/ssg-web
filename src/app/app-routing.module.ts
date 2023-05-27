@@ -20,13 +20,13 @@ const routes: Routes = [
     component: BlogPostComponent,
   },
   {
-    path: 'login',
+    path: 'auth/login',
     component: LoginComponent,
   },
   {
-    path: 'signup',
+    path: 'auth/signup',
     component: SignupComponent,
-  }
+  },
 ];
 
 @NgModule({
