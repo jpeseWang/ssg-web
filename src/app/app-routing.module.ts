@@ -7,6 +7,7 @@ import { BlogPostComponent } from './components/pages/blog-post/blog-post.compon
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
     component: HomeComponent,
   },
   {
