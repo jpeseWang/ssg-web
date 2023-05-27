@@ -9,15 +9,21 @@
     allowfullscreen
   ></iframe>
 
-  <div class="content" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
-    <h1>TOGETHER
-    <br />
-    WE STOP
-    <br />
-    BULLYING!</h1>
-    <p>Charity is priority. Charity is the act of your power. <br>Charity is the life of kindness. <br>Charity sees the need, not the cause.</p>
-    <button><a [routerLink]="'blogs'">Join us now!</a></button>
+  <div
+    class="content"
+    style="
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+        'Lucida Sans', Arial, sans-serif;
+    "
+  >
+    <h1>
+      TOGETHER
+      <br />
+      WE STOP
+      <br />
+      BULLYING!
+    </h1>
+    <p>{{ quote }}</p>
+    <button><a [routerLink]="['/blogs']">Watch our movie</a></button>
   </div>
-  
- 
 </div>

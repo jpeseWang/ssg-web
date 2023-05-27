@@ -8,5 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent {
   constructor() {}
 
+  quote =
+    '“People who love themselves, don’t hurt other people. The more we hate ourselves, the more we want others to suffer.”';
+
   ngOnInit() {}
 }

@@ -8,10 +8,10 @@
   <nav>
     <ul class="nav_links">
       <li><a href="#">Home</a></li>
-      <li><a [routerLink]="'blogs'">Blogs</a></li>
+      <li><a [routerLink]="['blogs']">Blogs</a></li>
       <li><a href="#">About us</a></li>
-      <li><a [routerLink]="'auth/signup'">Sign up</a></li>
+      <li><a [routerLink]="['/auth/signup']">Sign up</a></li>
     </ul>
   </nav>
-  <a [routerLink]="'auth/login'" class="cta"><button>Login</button></a>
+  <a [routerLink]="['/auth/login']" class="cta"><button>Login</button></a>
 </header>
