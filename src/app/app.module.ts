@@ -7,13 +7,11 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BlogsComponent } from './components/pages/blogs/blogs.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BlogPostComponent } from './components/pages/blog-post/blog-post.component';
-import { LoginComponent } from './components/authentication/login/login.component';
-import { SignupComponent } from './components/authentication/signup/signup.component';
 import { Navbar2Component } from './navbar2/navbar2.component';
 
 @NgModule({
@@ -24,8 +22,6 @@ import { Navbar2Component } from './navbar2/navbar2.component';
     NavbarComponent,
     FooterComponent,
     BlogPostComponent,
-    LoginComponent,
-    SignupComponent,
     Navbar2Component,
   ],
   imports: [
