@@ -1,9 +1,12 @@
 <header>
+  <div class="logo">
   <a href="/">
-    <div class="logo">
+    
       <img src="../../../assets/images/logo.png" alt="" />
       <h1>Heart2heart</h1>
-    </div></a>
+    
+  </a>
+</div>
     <div class="menu_icon" [class.menu_iconClass]="menu_icon_variable" (click)="openMenu()">
       <span></span>
       <span></span>
@@ -13,8 +16,9 @@
     <div class="menu" [class.menuClasse]="menuVariable">
     <ul class="nav_links">
       <li [class.active]="isRouteActive('/')"><a href="#">Home</a></li>
+      <li [class.active]="isRouteActive('movie')"><a [routerLink]="['movie']">Movie</a></li>
       <li [class.active]="isRouteActive('blogs')"><a [routerLink]="['blogs']">Blogs</a></li>
-      <li [class.active]="isRouteActive('about')"><a href="#">About us</a></li>
+      <li [class.active]="isRouteActive('about')"><a [routerLink]="['about']">About us</a></li>
       <li [class.active]="isRouteActive('/auth/signup')"><a [routerLink]="['/auth/signup']">Sign up</a></li>
       <li [class.active]="isRouteActive('login')"><a [routerLink]="['/auth/login']"><button>Login</button></a></li>
       

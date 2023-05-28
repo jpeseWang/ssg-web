@@ -29,12 +29,11 @@ header{
     padding: 15px 10%;
     height: 65%;
 }
-.logo, h1{
+.logo{
     cursor: pointer;
-    margin-right: auto;
-    display: flex;
-    margin-right: -200px;
-   
+    float: left;
+    width: 300px;
+    
 }
 nav{
     order: 1;
@@ -45,6 +44,7 @@ nav{
 .nav_links li{
     display: inline-block;
     padding: 0px 20px;
+   
 }
 .nav_links li a{
     transition: all 0.3s ease 0s;
@@ -71,73 +71,88 @@ button:hover{
 }
 
 
-@media(max-width: 999px){
-    .menu{
-      position: fixed;
-      right: -280px;
-      top:64;
-      width: 280px;
-      height: 100%;
-      background: #222;
-      transition: 0.4s ease-in-out;
-      margin-top: 30px;
-    
-    }
-    .menu ul li {
-      display: block;
-      text-align: left;
-      margin: 0;
-      padding: 10px 0 10px 26px;
-      border-bottom: 1px solid #312f2f;
-    
-    }
-    .menu_icon{
-      display: inline-block;
-      position: relative;
-      right: 0;
-      top: 20 px;
-    
-    }
-    
-    
-    .menu_icon span {
-      width: 32px;
-      height: 3px;
-      background: #ffffff;
-      display: block;
-      transition: 0.2s ease-in-out;
-    
-    }
-    .menu_icon span:nth-child(2) {
-      margin: 4px 0;
-    
-    }
-    .menu_iconClass span:nth-child(2){
-    
-    display: none;
-    }
-    
-    .menu_iconClass span:nth-child(1){
-    
-      transform: rotate(40deg);
-    }
-    
-    
-    .menu_iconClass span:nth-child(3){
-    
-      transform: rotate(-40deg);
-      margin-top: -3px;
-    }
-    
-    .menuClasse{
-    
-    right: 0;
-    transition: 0.4s ease-in-out;
-    
-    }
-    }
     .nav_links li.active a {
         color: #b807be;
         
       }
       
+.logo {
+  float: left;
+}
+
+.login, .signup {
+  float: right;
+}
+
+.nav_links li {
+  float: none;
+  text-align: center;
+}
+
+
+
+@media(max-width: 999px){
+  .menu{
+    position: fixed;
+    right: -280px;
+    top:64;
+    width: 280px;
+    height: 100%;
+    background: #222;
+    transition: 0.4s ease-in-out;
+    margin-top: 30px;
+  
+  }
+  .menu ul li {
+    display: block;
+    text-align: left;
+    margin: 0;
+    padding: 10px 0 10px 26px;
+    border-bottom: 1px solid #312f2f;
+  
+  }
+  .menu_icon{
+    display: inline-block;
+    position: relative;
+    right: 0;
+    top: 20 px;
+  
+  }
+  
+  
+  .menu_icon span {
+    width: 32px;
+    height: 3px;
+    background: #ffffff;
+    display: block;
+    transition: 0.2s ease-in-out;
+  
+  }
+  .menu_icon span:nth-child(2) {
+    margin: 4px 0;
+  
+  }
+  .menu_iconClass span:nth-child(2){
+  
+  display: none;
+  }
+  
+  .menu_iconClass span:nth-child(1){
+  
+    transform: rotate(40deg);
+  }
+  
+  
+  .menu_iconClass span:nth-child(3){
+  
+    transform: rotate(-40deg);
+    margin-top: -3px;
+  }
+  
+  .menuClasse{
+  
+  right: 0;
+  transition: 0.4s ease-in-out;
+  
+  }
+  }
