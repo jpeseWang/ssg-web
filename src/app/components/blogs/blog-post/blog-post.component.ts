@@ -15,12 +15,19 @@ export class BlogPostComponent implements OnInit {
   ) {}
 
   blogPost$: Observable<any> | undefined;
+  comments: Array<{ username: string; content: string }> = [];
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       const id = params['id'];
 
       this.blogPost$ = this.contentfulService.getEntryById(id);
+
+      // FIX: GET COMMENTS FROM SERVER
+      this.comments = [
+        { username: 'codieglot', content: `Hey yo, what's up?` },
+        { username: 'codieglot', content: `Shut up, mtfk` },
+      ];
     });
   }
 }

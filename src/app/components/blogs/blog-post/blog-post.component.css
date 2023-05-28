@@ -39,3 +39,7 @@
     font-size: 13px;
     margin-bottom: 50px;
 }
+
+.comments-container .username {
+    font-style: oblique;
+}
