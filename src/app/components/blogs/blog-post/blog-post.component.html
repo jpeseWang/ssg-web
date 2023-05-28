@@ -4,11 +4,16 @@
       {{ $any(blogPost).fields.title }}
     </h1>
     <img [src]="$any(blogPost).fields.featuredImage.fields.file.url" />
-    
 
     <p class="author">Posted by @{{ $any(blogPost).fields.author }}</p>
-    <p class="content">
-      {{ $any(blogPost).fields.content.content[0].content[0].value }}
-    </p>
+    <p class="summary">{{ $any(blogPost).fields.summary }}</p>
+    <div
+      class="content-container"
+      *ngFor="let content of $any(blogPost).fields.content.content"
+    >
+      <p class="content">
+        {{ content.content[0].value }}
+      </p>
+    </div>
   </div>
 </main>

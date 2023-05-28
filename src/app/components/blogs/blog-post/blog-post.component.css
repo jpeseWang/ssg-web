@@ -33,3 +33,9 @@
     color: rgb(93, 92, 90);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.post-container .summary {
+    font-style: italic;
+    font-size: 13px;
+    margin-bottom: 50px;
+}
