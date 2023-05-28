@@ -3,7 +3,7 @@ import { Route, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
-const AUTH_ROUTE: Route[] = [
+const routes: Route[] = [
   {
     path: '',
     pathMatch: 'prefix',
@@ -24,7 +24,7 @@ const AUTH_ROUTE: Route[] = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(AUTH_ROUTE)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class AuthenticationRoutingModule {}

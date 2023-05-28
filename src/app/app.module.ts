@@ -8,23 +8,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { BlogsComponent } from './components/pages/blogs/blogs.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { BlogPostComponent } from './components/pages/blog-post/blog-post.component';
-
-
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    BlogsComponent,
-    NavbarComponent,
-    FooterComponent,
-    BlogPostComponent,
-
-  ],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

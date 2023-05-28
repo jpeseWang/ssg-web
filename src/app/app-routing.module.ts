@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/pages/home/home.component';
-import { BlogsComponent } from './components/pages/blogs/blogs.component';
-import { BlogPostComponent } from './components/pages/blog-post/blog-post.component';
 
 const routes: Routes = [
   {
@@ -12,11 +10,8 @@ const routes: Routes = [
   },
   {
     path: 'blogs',
-    component: BlogsComponent,
-  },
-  {
-    path: 'blogs/:id',
-    component: BlogPostComponent,
+    loadChildren: () =>
+      import('./components/blogs/blogs.module').then((m) => m.BlogsModule),
   },
   {
     path: 'auth',
