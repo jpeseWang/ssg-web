@@ -26,6 +26,7 @@
     margin-bottom: 20px;
     padding: 0 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center;
 }
 .post-container .author {
     margin-bottom: 20px;
@@ -41,5 +42,56 @@
 }
 
 .comments-container .username {
-    font-style: oblique;
+    font-weight: 600;
+    
+    color: #03658c;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: inline;
+    justify-content: center;
+    
+    /* border-bottom: 2px solid rgb(135, 135, 135); */
+}
+
+.comments-container{
+    border: 2px solid rgb(124, 121, 121);
+    border-radius: 20px;
+    max-width: 1000px;
+    margin: 0 auto; 
+    margin-bottom: 75px;
+    padding: 15px;
+    background-color: transparent !important;
+    margin-top: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.comments-container .content {
+    background-color: #EEEEEE;
+    color: rgb(87, 87, 86);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius:10px;
+    height: 40px;
+    width: 40%;
+    justify-content: center;
+}
+.comments-container h1{
+    padding-bottom: 2%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: rgb(94, 94, 93)
+}
+.comments-container p {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 150px;
+    border: 2px solid #f9fafe;
+    box-shadow: 0 0 50px #ccc;
+
+    position: relative;
+    
+  }
+  .comments-container .username2 {
+    display: inline;
 }

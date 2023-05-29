@@ -20,8 +20,10 @@
   <div class="comments-container">
     <h1>Comments Section</h1>
     <div class="comment" *ngFor="let comment of comments">
-      <p class="username">{{ comment.username }}</p>
+      <div class="username-container">
+      <img class="avatar" src="https://vcdn-sohoa.vnecdn.net/2021/02/16/v2-4f48da9ef042a1915ebfedd0682-6733-6243-1613447924.jpg?w=0&h=0&q=100&dpr=2&fit=crop&s=8wSEh1FTPclZ4tmr62i8Zw" /><p class="username">{{ comment.username }}</p></div>
       <p class="content">{{ comment.content }}</p>
+      <br>
     </div>
   </div>
 </main>
