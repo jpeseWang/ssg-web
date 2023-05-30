@@ -6,7 +6,7 @@ import { MovieComponent } from './components/movie/movie.component';
 
 const routes: Routes = [
   {
-    path: 'about',
+    path: 'about-us',
     component: AboutusComponent,
   },
   {
@@ -22,6 +22,13 @@ const routes: Routes = [
     path: 'blogs',
     loadChildren: () =>
       import('./components/blogs/blogs.module').then((m) => m.BlogsModule),
+  },
+  {
+    path: 'marketplace',
+    loadChildren: () =>
+      import('./components/marketplace/marketplace.module').then(
+        (m) => m.MarketplaceModule
+      ),
   },
   {
     path: 'auth',
