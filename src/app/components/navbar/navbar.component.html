@@ -29,11 +29,12 @@
         <li [class.active]="isRouteActive('about-us')">
           <a [routerLink]="['about-us']">About us</a>
         </li>
-        <li [class.active]="isRouteActive('/auth/signup')">
-          <a [routerLink]="['/auth/signup']">Sign up</a>
-        </li>
+        
         <li [class.active]="isRouteActive('login')">
           <a [routerLink]="['/auth/login']"><button>Login</button></a>
+        </li>
+        <li [class.active]="isRouteActive('/auth/signup')">
+          <a [routerLink]="['/auth/signup']">Sign up</a>
         </li>
       </ul>
     </div>

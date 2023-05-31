@@ -1,5 +1,6 @@
 <div class="container">
   <iframe
+    class="background-clip"
     width="50%"
     height="55%"
     src="https://www.youtube.com/embed/PAKFzFqJa58"
@@ -9,13 +10,7 @@
     allowfullscreen
   ></iframe>
 
-  <div
-    class="content"
-    style="
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-        'Lucida Sans', Arial, sans-serif;
-    "
-  >
+  <div class="content">
     <h1>
       TOGETHER
       <br />
@@ -24,6 +19,6 @@
       BULLYING!
     </h1>
     <p>{{ quote }}</p>
-    <button><a [routerLink]="['/movie']">Watch our movie!</a></button>
+    <button><a [routerLink]="'movie'">Watch our movie!</a></button>
   </div>
 </div>

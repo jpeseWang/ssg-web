@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  constructor(private router: Router){}
+  constructor(private router: Router, private render2: Renderer2){  }
+  
   menu_icon_variable: boolean = false;
   menuVariable: boolean = false;
   isRouteActive(route: string): boolean {
