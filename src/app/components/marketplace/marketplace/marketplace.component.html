@@ -1,1 +1,6 @@
-<p>marketplace works!</p>
+<div *ngFor="let product of products">
+  {{ product.name }}
+  {{ product.price }}
+  {{ product.imageUrl }}
+  {{ product.description }}
+</div>
