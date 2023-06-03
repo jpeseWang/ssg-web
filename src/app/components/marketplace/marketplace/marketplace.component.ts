@@ -14,7 +14,6 @@ export class MarketplaceComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe((res) => {
       this.products = [...res.data];
-      console.log(this.products);
     });
   }
 }
