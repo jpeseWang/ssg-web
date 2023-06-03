@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -27,27 +28,6 @@
     border-radius: 20px;
   }
   
-  
-
-
-  @media screen and (min-width: 435px) and (max-width:700px) {
-    .container {
-      flex-direction: column;
-    }
-  
-    iframe {
-      width: 95%;
-      height: 95%;
-      margin-bottom: 20px;
-      border-radius: 20px;
-    }
-  
-    .content {
-      font-size: xxx-large;
-      text-indent: 0;
-    }
-  }
-  
   a {
     text-decoration: inherit;
     color: rgb(56, 0, 57);
@@ -55,7 +35,7 @@
     font-weight: 500;
   }
   
-  button {
+button {
     display: inline-block;
     text-decoration: none;
     background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
@@ -67,19 +47,60 @@
     color: white;
     font-weight: 500;
   }
-  
-  button:hover {
+
+button:hover {
     opacity: 1.5;
   }
-  
-  p {
+p {
     font-size: 25px;
     color: #a7a7aa;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 300;
   }
   
- 
 h1{
-  font-size: xxx-large;
+  font-size: 70px;
+  font-family: 'Lato', sans-serif;
+}
+
+
+
+@media screen and (min-width: 435px) and (max-width:700px) {
+  .container {
+    flex-direction: column;
+  }
+
+  iframe {
+    width: 95%;
+    height: 95%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+  }
+
+  .content {
+    font-size: xxx-large;
+    text-indent: 0;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width:480px) {
+  .container {
+    flex-direction: column;
+    padding: 4%;
+  }
+
+  iframe {
+    width: 95%;
+    height: 95%;
+    margin-bottom: 20px;
+    border-radius: 20px;
+  }
+
+  .content {
+    font-size: xxx-large;
+    text-indent: 0;
+  }
+  p{
+    font-size: 35%;
+  }
 }
