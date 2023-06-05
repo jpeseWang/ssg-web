@@ -26,12 +26,12 @@ export class AuthService {
   setSession(data: any) {
     const expiresAt = moment().add(data.token.expiresIn, 'second');
 
-    localStorage.setItem('id_token', data.token.accessToken);
+    localStorage.setItem('access_token', data.token.accessToken);
     localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
   }
 
   logout() {
-    localStorage.removeItem('id_token');
+    localStorage.removeItem('access_token');
     localStorage.removeItem('expires_at');
   }
 
