@@ -5,25 +5,35 @@
         <h2>Sign up</h2>
         <div class="inputbox">
           <!-- <ion-icon name="mail-outline"></ion-icon> -->
-          <input type="textr" required placeholder=" " />
+          <input type="textr" required placeholder=" " #username />
           <label for="">Username</label>
         </div>
-        <div class="inputbox">
-          <!-- <ion-icon name="mail-outline"></ion-icon> -->
-          <input type="email" required placeholder=" " />
+        <!-- <div class="inputbox">
+          <ion-icon name="mail-outline"></ion-icon>
+          <input required placeholder=" " #email />
           <label for="">Email</label>
+        </div> -->
+        <div class="inputbox">
+          <!-- <ion-icon name="lock-closed-outline"></ion-icon> -->
+          <input type="password" required placeholder=" " #password1 />
+          <label for="">Password</label>
         </div>
         <div class="inputbox">
           <!-- <ion-icon name="lock-closed-outline"></ion-icon> -->
-          <input type="password" required placeholder=" " />
-          <label for="">Password</label>
+          <input type="password" required placeholder=" " #password2 />
+          <label for="">Password (again)</label>
         </div>
         <div class="forget">
           <label for=""
             ><input type="checkbox" />I agree to terms and conditions</label
           >
         </div>
-        <button>Sign Up</button>
+        <button
+          type="button"
+          (click)="signup(username.value, password1.value, password2.value)"
+        >
+          Sign Up
+        </button>
         <div class="register">
           <p>
             Already have an account?

@@ -5,21 +5,26 @@
         <h2>Login</h2>
         <div class="inputbox">
           <!-- <ion-icon name="mail-outline"></ion-icon> -->
-          <input type="email" required placeholder=" " />
+          <input required placeholder=" " #username />
           <label for="">Username or Email</label>
         </div>
         <div class="inputbox">
           <!-- <ion-icon name="lock-closed-outline"></ion-icon> -->
-          <input class="form-input" type="password" required placeholder=" " />
+          <input
+            class="form-input"
+            type="password"
+            required
+            placeholder=" "
+            #password
+          />
           <label for="">Password</label>
         </div>
         <div class="forget">
-          <label for=""
-            ><input type="checkbox" placeholder=" " />Remember Me
-            <a href="#">Forget Password</a></label
-          >
+          <label for=""> <a href="#">Forget Password</a></label>
         </div>
-        <button>Log in</button>
+        <button type="button" (click)="login(username.value, password.value)">
+          Log in
+        </button>
         <div class="register">
           <p>
             Don't have a account?
