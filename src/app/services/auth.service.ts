@@ -28,11 +28,15 @@ export class AuthService {
 
     localStorage.setItem('access_token', data.token.accessToken);
     localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
+
+    localStorage.setItem('current_user', JSON.stringify(data.user));
   }
 
   logout() {
     localStorage.removeItem('access_token');
     localStorage.removeItem('expires_at');
+
+    localStorage.removeItem('current_user');
   }
 
   isLoggedIn() {
