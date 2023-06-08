@@ -1,3 +1,14 @@
+
+<div class="main-header">
+  <button><h2 class="rounded-2xl bg-purple-600 px-3.5 py-2.5  text-sm font-semibold text-white shadow-sm hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400" (click)="openDialog()">Create a post</h2></button>
+  <div class="search">
+    <input type="text" placeholder="Search" class="border-solid"/>
+    <button type="submit" class="rounded-md bg-slate-400 px-3.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400">
+      <i class="ph-magnifying-glass-bold"></i>
+      Find
+    </button>
+  </div>
+</div>
 <main *ngIf="blogPosts$ | async as blogPosts">
   <div class="blog-posts-container" *ngFor="let blogPost of $any(blogPosts).items">
     <img [src]="blogPost.fields.featuredImage.fields.file.url" />

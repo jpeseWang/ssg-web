@@ -139,4 +139,40 @@ a:not(:nth-child(1)){
       transform: translate3d(4px, 0, 0);
     }
   }
+
+  .main-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  
+  
+    }
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      line-height: 1.25;
+      margin: 50px;
+    }
+    
+  .main-header {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 2%;
+  }
+  .search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 340px;
+
+  }
+  input{
+    border: 1px solid #767676;
+    border-radius: 10px;
+    margin-right: 2%;
+    padding: 4px
+  }
   
