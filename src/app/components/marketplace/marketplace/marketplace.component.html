@@ -10,8 +10,13 @@
 	  <div class="responsive-wrapper">
 		  <div class="main-header">
 			  <h1>Anything you want is here!</h1>
-			  <div class="search">
-				  <input type="text" placeholder="Search" />
+			  <div class="search ">
+				<form  class="nav-v2-search__input bg-gray-100 rounded-xl inline">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+				  	</svg>
+				  <input type="text" placeholder="Search" class="nav-v2-search__input bg-gray-100 rounded-xl inline"/>
+				</form>
 				  <button type="submit">
 					  <i class="ph-magnifying-glass-bold"></i>
 				  </button>
@@ -19,15 +24,12 @@
 		  </div>
 		  <div class="horizontal-tabs">
 			<a href="#" (click)="setActiveTab('details')" [class.active]="activeTab === 'details'">My details</a>
-			<a href="#" (click)="setActiveTab('profile')" [class.active]="activeTab === 'profile'">Profile</a>
-			<a href="#" (click)="setActiveTab('password')" [class.active]="activeTab === 'password'">Password</a>
 			<a href="#" (click)="setActiveTab('team')" [class.active]="activeTab === 'team'">Team</a>
 			<a href="#" (click)="setActiveTab('plan')" [class.active]="activeTab === 'plan'">Plan</a>
 			<a href="#" (click)="setActiveTab('billing')" [class.active]="activeTab === 'billing'">Billing</a>
 			<a href="#" (click)="setActiveTab('shop')" [class.active]="activeTab === 'shop'">Shop</a>
 			<a href="#" (click)="setActiveTab('notifications')" [class.active]="activeTab === 'notifications'">Notifications</a>
-			<a href="#" (click)="setActiveTab('integrations')" [class.active]="activeTab === 'integrations'">Integrations</a>
-			<a href="#" (click)="setActiveTab('api')" [class.active]="activeTab === 'api'">API</a>
+			<a href="#" style="color: #ea4c89" (click)="setActiveTab('integrations')" [class.active]="activeTab === 'integrations'">Go Pro</a>
 		  </div>
 		  
 		  <div class="content-header">
