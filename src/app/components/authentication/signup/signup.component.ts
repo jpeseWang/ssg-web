@@ -17,8 +17,6 @@ export class SignupComponent {
     }
 
     this.authService.signup(username, password1).subscribe((res) => {
-      console.log(res);
-
       this.authService.setSession(res.data);
       this.router.navigateByUrl('');
     });

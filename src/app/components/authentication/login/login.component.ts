@@ -12,8 +12,6 @@ export class LoginComponent {
 
   login(username: string, password: string) {
     this.authService.login(username, password).subscribe((res) => {
-      console.log(res);
-
       this.authService.setSession(res.data);
       this.router.navigateByUrl('');
     });

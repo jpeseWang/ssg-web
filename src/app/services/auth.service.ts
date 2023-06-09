@@ -47,10 +47,6 @@ export class AuthService {
     return moment().isBefore(expiration);
   }
 
-  isLoggedOut() {
-    return !this.isLoggedIn();
-  }
-
   getExpiration() {
     const expiration = localStorage.getItem('expires_at');
     if (!expiration) {
@@ -58,5 +54,13 @@ export class AuthService {
     }
     const expiresAt = JSON.parse(expiration);
     return moment(expiresAt);
+  }
+
+  getAccessToken() {
+    return localStorage.getItem('access_token');
+  }
+
+  getCurrentUser() {
+    return JSON.parse(localStorage.getItem('current_user') as string);
   }
 }

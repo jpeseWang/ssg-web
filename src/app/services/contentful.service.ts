@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { createClient, Entry } from 'contentful';
-import { environment } from '../../environments/environment';
+import {
+  CONTENTFUL_SPACE_ID,
+  CONTENTFUL_ACCESS_TOKEN,
+} from '../../environments/constants';
 import { from } from 'rxjs';
 
 @Injectable({
@@ -10,8 +13,8 @@ export class ContentfulService {
   constructor() {}
 
   private client = createClient({
-    space: environment.spaceId,
-    accessToken: environment.accessToken,
+    space: CONTENTFUL_SPACE_ID,
+    accessToken: CONTENTFUL_ACCESS_TOKEN,
   });
 
   getAllEntries() {

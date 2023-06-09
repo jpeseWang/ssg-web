@@ -8,7 +8,7 @@
   <div
     class="menu_icon"
     [class.menu_iconClass]="menu_icon_variable"
-    (click)="openMenu()"
+    (click)="toggleMenuStatus()"
   >
     <span></span>
     <span></span>
@@ -29,13 +29,20 @@
         <li [class.active]="isRouteActive('about-us')">
           <a [routerLink]="['about-us']">About us</a>
         </li>
-        
-        <li [class.active]="isRouteActive('login')">
+
+        <li [class.active]="isRouteActive('login')" *ngIf="!isLoggedIn()">
           <a [routerLink]="['/auth/login']"><button>Login</button></a>
         </li>
-        <li [class.active]="isRouteActive('/auth/signup')">
+        <li
+          [class.active]="isRouteActive('/auth/signup')"
+          *ngIf="!isLoggedIn()"
+        >
           <a [routerLink]="['/auth/signup']">Sign up</a>
         </li>
+
+        <!-- TODO: STYLE THESE -->
+        <li *ngIf="isLoggedIn()">{{ getCurrentUser().username }}</li>
+        <li *ngIf="isLoggedIn()" (click)="signout()">Sign out</li>
       </ul>
     </div>
   </nav>
