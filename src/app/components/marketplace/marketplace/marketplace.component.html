@@ -1,306 +1,128 @@
 <!-- <div *ngFor="let product of products">
-  {{ product.name }}
-  {{ product.price }}
-  {{ product.imageUrl }}
-  {{ product.description }}
+  {{ product.type }}
 </div> -->
 
-  
-  <main class="main">
-	  <div class="responsive-wrapper">
-		  <div class="main-header">
-			  <h1>Anything you want is here!</h1>
-			  <div class="search ">
-				<form  class="nav-v2-search__input bg-gray-100 rounded-xl inline">
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-				  	</svg>
-				  <input type="text" placeholder="Search" class="nav-v2-search__input bg-gray-100 rounded-xl inline"/>
-				</form>
-				  <button type="submit">
-					  <i class="ph-magnifying-glass-bold"></i>
-				  </button>
-			  </div>
-		  </div>
-		  <div class="horizontal-tabs">
-			<a href="#" (click)="setActiveTab('details')" [class.active]="activeTab === 'details'">My details</a>
-			<a href="#" (click)="setActiveTab('team')" [class.active]="activeTab === 'team'">Team</a>
-			<a href="#" (click)="setActiveTab('plan')" [class.active]="activeTab === 'plan'">Plan</a>
-			<a href="#" (click)="setActiveTab('billing')" [class.active]="activeTab === 'billing'">Billing</a>
-			<a href="#" (click)="setActiveTab('shop')" [class.active]="activeTab === 'shop'">Shop</a>
-			<a href="#" (click)="setActiveTab('notifications')" [class.active]="activeTab === 'notifications'">Notifications</a>
-			<a href="#" style="color: #ea4c89" (click)="setActiveTab('integrations')" [class.active]="activeTab === 'integrations'">Go Pro</a>
-		  </div>
-		  
-		  <div class="content-header">
-			  <div class="content-header-intro">
-				  <h2>Intergrations and connected apps</h2>
-				  <p>Supercharge your workflow and connect the tool you use every day.</p>
-			  </div>
-			  <div class="content-header-actions">
-				  <a href="#" class="button">
-					  <i class="ph-faders-bold"></i>
-					  <span>Filters</span>
-				  </a>
-				  <a href="#" class="button">
-					  <i class="ph-plus-bold"></i>
-					  <span>Request integration</span>
-				  </a>
-			  </div>
-		  </div>
-		  <div class="content">
-			  <div class="content-panel">
-				  <div class="vertical-tabs">
-					  <a href="#" class="active">View all</a>
-					  <a href="#">Developer tools</a>
-					  <a href="#">Communication</a>
-					  <a href="#">Productivity</a>
-					  <a href="#">Browser tools</a>
-					  <a href="#">Marketplace</a>
-				  </div>
-			  </div>
-			  <div class="content-main">
-				  <div class="card-grid">
-  
-					  
-  
-					  <div *ngFor="let product of products">
-						
-						
-						
-						
-						<article class="card">
-							<div class="card-header">
-								<img src="{{ product.imageUrl }}" />		
-								
-								<label class="toggle">
-									<input type="checkbox" checked>
-									<span></span>
-								</label>
-							</div>
-							<div class="card-body">
-								<h2 class="bold text-lg">{{ product.name }}</h2>
-								<p>{{ product.description }} Shoes</p>
-								<a href="#" class="price">{{ product.price }} VND</a>
-							</div>
-							<div class="card-footer ml-1 flex">
-								<button class="bg-white hover:bg-gray-100 text-gray-600 font-semibold py-2 px-4 border border-gray-200 rounded shadow mr-auto">
-									Details
-								  </button>
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 ml-auto">
-									<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-								  </svg>
-								  
-							</div>
-						</article>
-	
-					  </div>
-  
-			
-			
-  
-  <!-- 
-					  <article class="card">
-						  <div class="card-header">
-							  <div>
-								  <span><img src="https://assets.codepen.io/285131/github.svg" /></span>
-								  <h3>GitHub</h3>
-							  </div>
-							  <label class="toggle">
-								  <input type="checkbox" checked>
-								  <span></span>
-							  </label>
-						  </div>
-						  <div class="card-body">
-							  <p>Link pull requests and automate workflows.</p>
-						  </div>
-						  <div class="card-footer">
-							  <a href="#">View integration</a>
-						  </div>
-					  </article>
-					  <article class="card">
-						  <div class="card-header">
-							  <div>
-								  <span><img src="https://assets.codepen.io/285131/figma.svg" /></span>
-								  <h3>Figma</h3>
-							  </div>
-							  <label class="toggle">
-								  <input type="checkbox" checked>
-								  <span></span>
-							  </label>
-						  </div>
-						  <div class="card-body">
-							  <p>Embed file previews in projects.</p>
-						  </div>
-						  <div class="card-footer">
-							  <a href="#">View integration</a>
-						  </div>
-					  </article>
-					  <article class="card">
-						  <div class="card-header">
-							  <div>
-								  <span><img src="https://assets.codepen.io/285131/zapier.svg" /></span>
-								  <h3>Zapier</h3>
-							  </div>
-							  <label class="toggle">
-								  <input type="checkbox">
-								  <span></span>
-							  </label>
-						  </div>
-						  <div class="card-body">
-							  <p>Build custom automations and integrations with apps.</p>
-						  </div>
-						  <div class="card-footer">
-							  <a href="#">View integration</a>
-						  </div>
-					  </article>
-					  <article class="card">
-						  <div class="card-header">
-							  <div>
-								  <span><img src="https://assets.codepen.io/285131/notion.svg" /></span>
-								  <h3>Notion</h3>
-							  </div>
-							  <label class="toggle">
-								  <input type="checkbox" checked>
-								  <span></span>
-							  </label>
-						  </div>
-						  <div class="card-body">
-							  <p>Embed notion pages and notes in projects.</p>
-						  </div>
-						  <div class="card-footer">
-							  <a href="#">View integration</a>
-						  </div>
-					  </article>
-					  <article class="card">
-						  <div class="card-header">
-							  <div>
-								  <span><img src="https://assets.codepen.io/285131/slack.svg" /></span>
-								  <h3>Slack</h3>
-							  </div>
-							  <label class="toggle">
-								  <input type="checkbox" checked>
-								  <span></span>
-							  </label>
-						  </div>
-						  <div class="card-body">
-							  <p>Send notifications to channels and create projects.</p>
-						  </div>
-						  <div class="card-footer">
-							  <a href="#">View integration</a>
-						  </div>
-					  </article>
-					  <article class="card">
-						  <div class="card-header">
-							  <div>
-								  <span><img src="https://assets.codepen.io/285131/zendesk.svg" /></span>
-								  <h3>Zendesk</h3>
-							  </div>
-							  <label class="toggle">
-								  <input type="checkbox" checked>
-								  <span></span>
-							  </label>
-						  </div>
-						  <div class="card-body">
-							  <p>Link and automate Zendesk tickets.</p>
-						  </div>
-						  <div class="card-footer">
-							  <a href="#">View integration</a>
-						  </div>
-					  </article>
-					  <article class="card">
-						  <div class="card-header">
-							  <div>
-								  <span><img src="https://assets.codepen.io/285131/jira.svg" /></span>
-								  <h3>Atlassian JIRA</h3>
-							  </div>
-							  <label class="toggle">
-								  <input type="checkbox">
-								  <span></span>
-							  </label>
-						  </div>
-						  <div class="card-body">
-							  <p>Plan, track, and release great software.</p>
-						  </div>
-						  <div class="card-footer">
-							  <a href="#">View integration</a>
-						  </div>
-					  </article>
-					  <article class="card">
-						  <div class="card-header">
-							  <div>
-								  <span><img src="https://assets.codepen.io/285131/dropbox.svg" /></span>
-								  <h3>Dropbox</h3>
-							  </div>
-							  <label class="toggle">
-								  <input type="checkbox" checked>
-								  <span></span>
-							  </label>
-						  </div>
-						  <div class="card-body">
-							  <p>Everything you need for work, all in one place.</p>
-						  </div>
-						  <div class="card-footer">
-							  <a href="#">View integration</a>
-						  </div>
-					  </article>
-					  <article class="card">
-						  <div class="card-header">
-							  <div>
-								  <span><img src="https://assets.codepen.io/285131/google-chrome.svg" /></span>
-								  <h3>Google Chrome</h3>
-							  </div>
-							  <label class="toggle">
-								  <input type="checkbox" checked>
-								  <span></span>
-							  </label>
-						  </div>
-						  <div class="card-body">
-							  <p>Link your Google account to share bookmarks across your entire team.</p>
-						  </div>
-						  <div class="card-footer">
-							  <a href="#">View integration</a>
-						  </div>
-					  </article>
-					  <article class="card">
-						  <div class="card-header">
-							  <div>
-								  <span><img src="https://assets.codepen.io/285131/discord.svg" /></span>
-								  <h3>Discord</h3>
-							  </div>
-							  <label class="toggle">
-								  <input type="checkbox" checked>
-								  <span></span>
-							  </label>
-						  </div>
-						  <div class="card-body">
-							  <p>Keep in touch with your customers without leaving the app.</p>
-						  </div>
-						  <div class="card-footer">
-							  <a href="#">View integration</a>
-						  </div>
-					  </article>
-					  <article class="card">
-						  <div class="card-header">
-							  <div>
-								  <span><img src="https://assets.codepen.io/285131/google-drive.svg" /></span>
-								  <h3>Google Drive</h3>
-							  </div>
-							  <label class="toggle">
-								  <input type="checkbox">
-								  <span></span>
-							  </label>
-						  </div>
-						  <div class="card-body">
-							  <p>Link your Google account to share files across your entire team.</p>
-						  </div>
-						  <div class="card-footer">
-							  <a href="#">View integration</a>
-						  </div>
-					  </article> -->
-				  </div>
-			  </div>
-		  </div>
-	  </div>
-  </main>
-  
+<main class="main">
+  <div class="responsive-wrapper">
+    <div class="main-header">
+      <h1>Anything you want is here!</h1>
+      <div class="search">
+        <input
+          type="text"
+          placeholder="Search"
+          class="nav-v2-search__input bg-gray-100 rounded-xl inline"
+        />
+
+        <button type="submit">
+          <i class="ph-magnifying-glass-bold"></i>
+        </button>
+      </div>
+    </div>
+    <div class="horizontal-tabs">
+      <a
+        href="#"
+        (click)="setActiveTab('details')"
+        [class.active]="activeTab === 'details'"
+        >Lifestyle</a
+      >
+      <a
+        href="#"
+        (click)="setActiveTab('team')"
+        [class.active]="activeTab === 'team'"
+        >Jordan</a
+      >
+      <a
+        href="#"
+        (click)="setActiveTab('plan')"
+        [class.active]="activeTab === 'plan'"
+        >Running</a
+      >
+      <a
+        href="#"
+        (click)="setActiveTab('billing')"
+        [class.active]="activeTab === 'billing'"
+        >Basketball</a
+      >
+      <a
+        href="#"
+        (click)="setActiveTab('shop')"
+        [class.active]="activeTab === 'shop'"
+        >Football</a
+      >
+
+      <a
+        href="#"
+        style="color: #ea4c89"
+        (click)="setActiveTab('integrations')"
+        [class.active]="activeTab === 'integrations'"
+        >Go Pro</a
+      >
+    </div>
+
+    <div class="content">
+      <div class="content-panel">
+        <div
+          class="vertical-tabs px-0 bg-slate-100 rounded rounded-xl w-60 h-auto flex"
+        >
+          <h2 class="bold text-xl text-center px-3 py-4">Summary</h2>
+          <div class="cart py-3 text-gray-500">
+            <p class="border-b-2 border-solid px-3 py-3">Items:</p>
+            <h3 class="px-3 py-3">Total:</h3>
+          </div>
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full w-40 justify-center"
+          >
+            Checkout
+          </button>
+        </div>
+      </div>
+      <div class="content-main">
+        <div class="card-grid">
+          <div *ngFor="let product of products">
+            <article class="card">
+              <div class="card-header">
+                <img src="{{ product.imageUrl }}" />
+
+                <label class="toggle">
+                  <input type="checkbox" checked />
+                  <span></span>
+                </label>
+              </div>
+              <div class="card-body">
+                <h2 class="bold text-lg">{{ product.name }}</h2>
+                <p>{{ product.type }} Shoes</p>
+                <a href="#" class="price font-medium"
+                  >{{ numberWithCommas(product.price) }},000 VND</a
+                >
+              </div>
+              <div class="card-footer ml-1 flex">
+                <button
+                  class="bg-white hover:bg-gray-100 text-gray-600 font-semibold py-2 px-4 border border-gray-200 rounded shadow mr-auto"
+                  (click)="openDialog()"
+                >
+                  Details
+                </button>
+                <button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-6 h-6 ml-auto"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
