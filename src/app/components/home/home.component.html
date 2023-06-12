@@ -1,24 +1,35 @@
-<div class="container">
-  <iframe
-    class="background-clip"
-    width="50%"
-    height="55%"
-    src="https://www.youtube.com/embed/Wh2kwpnQu6c"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
-
-  <div class="content">
-    <h1>
-      TOGETHER
-      <br />
-      WE STOP
-      <br />
-      BULLYING!
-    </h1>
+<main>
+  <div>
+    <span>Together, we</span>
+    <h1 class="leading-30">stop bullying</h1>
+    <hr />
     <p class="italic">{{ quote }}</p>
-    <button class="hover:bg-sky-700"><a [routerLink]="'movie'">Watch our movie!</a></button>
+    <a href="#">Watch our movie</a>
   </div>
-</div>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <iframe
+        width="560"
+        height="355"
+        style="border-radius: 20px"
+        src="https://www.youtube.com/embed/nfs8NYg7yQM"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+  <!-- <img
+    src="https://cdn.pixabay.com/photo/2021/11/04/19/39/jellyfish-6769173_960_720.png"
+    alt=""
+    class="bg"
+  />
+  <img
+    src="https://cdn.pixabay.com/photo/2012/04/13/13/57/scallop-32506_960_720.png"
+    alt=""
+    class="bg2"
+  /> -->
+</main>

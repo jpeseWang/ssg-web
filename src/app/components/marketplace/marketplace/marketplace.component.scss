@@ -342,16 +342,6 @@ img {
   display: flex;
   align-items: flex-start;
 }
-.content-panel {
-  display: none;
-  max-width: 330px;
-  width: 28%;
-  padding: 2rem 1rem 2rem 0;
-  margin-right: 3rem;
-  @media (min-width: 800px) {
-    display: block;
-  }
-}
 
 .vertical-tabs {
   display: flex;
@@ -394,7 +384,7 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

@@ -5,6 +5,7 @@ import { ProductsComponent } from './products/products.component';
 import { MarketplaceRoutingModule } from './marketplace.routing';
 import { ProductPopupComponent } from './product-popup/product-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     ProductsComponent,
     ProductPopupComponent,
   ],
-  imports: [CommonModule, MarketplaceRoutingModule, MatDialogModule],
+  imports: [
+    CommonModule,
+    MarketplaceRoutingModule,
+    MatDialogModule,
+    FormsModule,
+  ],
 })
 export class MarketplaceModule {}

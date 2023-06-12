@@ -9,8 +9,8 @@ import { ProductPopupComponent } from '../product-popup/product-popup.component'
   styleUrls: ['./marketplace.component.scss'],
 })
 export class MarketplaceComponent implements OnInit {
-  activeTab: string = 'shop';
   products: any[] = [];
+  cartItems: any[] = [];
 
   constructor(
     private readonly productService: ProductService,
@@ -22,13 +22,27 @@ export class MarketplaceComponent implements OnInit {
       this.products = [...res.data];
     });
   }
-  openDialog() {
-    const dialogConfig = new MatDialogConfig();
 
+  openDialog(product: any) {
+    const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
+    dialogConfig.data = product;
 
-    this.dialog.open(ProductPopupComponent, dialogConfig);
+    const dialogRef = this.dialog.open(ProductPopupComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result && result.quantity > 0) {
+        const existingCartItem = this.cartItems.find(
+          (item) => item.id === result.id
+        );
+        if (existingCartItem) {
+          existingCartItem.quantity += result.quantity;
+        } else {
+          this.cartItems.push(result);
+        }
+      }
+    });
   }
 
   numberWithCommas(x: string) {
@@ -37,7 +51,19 @@ export class MarketplaceComponent implements OnInit {
     while (pattern.test(x)) x = x.replace(pattern, '$1,$2');
     return x;
   }
-  setActiveTab(tab: string): void {
-    this.activeTab = tab;
+
+  getTotalPrice(): number {
+    let total = 0;
+    for (const item of this.cartItems) {
+      total += item.price * item.quantity;
+    }
+    return total;
+  }
+
+  removeItem(item: any): void {
+    const index = this.cartItems.indexOf(item);
+    if (index > -1) {
+      this.cartItems.splice(index, 1);
+    }
   }
 }
