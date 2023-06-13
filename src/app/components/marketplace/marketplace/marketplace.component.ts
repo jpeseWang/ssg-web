@@ -13,6 +13,7 @@ export class MarketplaceComponent implements OnInit {
   products: ProductI[] = [];
   cartItems: CartItemI[] = [];
   cartQuantities = 0;
+  total = 0;
 
   constructor(
     private readonly productService: ProductService,
@@ -36,27 +37,31 @@ export class MarketplaceComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((res) => {
       if (res.event === 'AddToCart') {
-        const product = res.data.product;
-        this.cartItems.push({
-          id: product.id,
-          name: product.name,
-          price: product.price,
-          quantity: res.data.quantity,
-        });
+        const { product, quantity } = res.data;
 
-        this.cartQuantities += res.data.quantity;
+        this.addProductToCart(product, quantity);
+
+        this.cartQuantities += quantity;
       }
     });
   }
 
-  getNumberWithCommas(num: number) {
-    return this.numberService.getNumberWithCommas(num);
+  addProductToCart(product: ProductI, quantity: number) {
+    const index = this.cartItems.findIndex((item) => item.id === product.id);
+
+    index !== -1
+      ? (this.cartItems[index].quantity += quantity)
+      : this.cartItems.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          quantity,
+        });
+
+    this.total += product.price * quantity;
   }
 
-  getTotalOfCart() {
-    return this.cartItems.reduce(
-      (sum, item) => sum + item.price * item.quantity,
-      0
-    );
+  getNumberWithCommas(num: number) {
+    return this.numberService.getNumberWithCommas(num);
   }
 }

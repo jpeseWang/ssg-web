@@ -9,7 +9,7 @@ import { NumberService } from 'src/app/services';
   styleUrls: ['./product-popup.component.css'],
 })
 export class ProductPopupComponent implements OnInit {
-  quantity = 0;
+  quantity = 1;
   product!: ProductI;
 
   constructor(
@@ -30,20 +30,16 @@ export class ProductPopupComponent implements OnInit {
   }
 
   reduce() {
-    if (this.quantity !== 0) {
+    if (this.quantity !== 1) {
       this.quantity--;
     }
   }
 
   addToCart() {
-    if (this.quantity !== 0) {
-      this.dialogRef.close({
-        event: 'AddToCart',
-        data: { product: this.product, quantity: this.quantity },
-      });
-    } else {
-      this.dialogRef.close();
-    }
+    this.dialogRef.close({
+      event: 'AddToCart',
+      data: { product: this.product, quantity: this.quantity },
+    });
   }
 
   closeDialog() {
