@@ -10,7 +10,6 @@ import { ProductPopupComponent } from '../product-popup/product-popup.component'
 })
 export class MarketplaceComponent implements OnInit {
   products: any[] = [];
-  private _cart: Cart = { items: [] };
   itemsQuantity = 0;
 
   constructor(
@@ -32,18 +31,18 @@ export class MarketplaceComponent implements OnInit {
 
     const dialogRef = this.dialog.open(ProductPopupComponent, dialogConfig);
 
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result && result.quantity > 0) {
-        const existingCartItem = this.cartItems.find(
-          (item) => item.id === result.id
-        );
-        if (existingCartItem) {
-          existingCartItem.quantity += result.quantity;
-        } else {
-          this.cartItems.push(result);
-        }
-      }
-    });
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   if (result && result.quantity > 0) {
+    //     const existingCartItem = this.cartItems.find(
+    //       (item) => item.id === result.id
+    //     );
+    //     if (existingCartItem) {
+    //       existingCartItem.quantity += result.quantity;
+    //     } else {
+    //       this.cartItems.push(result);
+    //     }
+    //   }
+    // });
   }
 
   numberWithCommas(x: string) {
@@ -53,18 +52,18 @@ export class MarketplaceComponent implements OnInit {
     return x;
   }
 
-  getTotalPrice(): number {
-    let total = 0;
-    for (const item of this.cartItems) {
-      total += item.price * item.quantity;
-    }
-    return total;
-  }
+  // getTotalPrice(): number {
+  //   let total = 0;
+  //   for (const item of this.cartItems) {
+  //     total += item.price * item.quantity;
+  //   }
+  //   return total;
+  // }
 
-  removeItem(item: any): void {
-    const index = this.cartItems.indexOf(item);
-    if (index > -1) {
-      this.cartItems.splice(index, 1);
-    }
-  }
+  // removeItem(item: any): void {
+  //   const index = this.cartItems.indexOf(item);
+  //   if (index > -1) {
+  //     this.cartItems.splice(index, 1);
+  //   }
+  // }
 }
