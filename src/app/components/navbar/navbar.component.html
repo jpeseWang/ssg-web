@@ -1,7 +1,7 @@
 <header>
   <div class="logo inline">
     <a href="/">
-      <img src="../../../assets/images/logo.png" alt="" class="inline"/>
+      <img src="../../../assets/images/logo.png" alt="" class="inline" />
       <h1>Heart2heart</h1>
     </a>
   </div>
@@ -23,6 +23,9 @@
         <li [class.active]="isRouteActive('blogs')">
           <a [routerLink]="['blogs']">Blogs</a>
         </li>
+        <li [class.active]="isRouteActive('quiz')">
+          <a [routerLink]="['quiz']">Quiz</a>
+        </li>
         <li [class.active]="isRouteActive('marketplace')">
           <a [routerLink]="['marketplace']">Marketplace</a>
         </li>
@@ -42,7 +45,13 @@
 
         <!-- TODO: STYLE THESE -->
         <li *ngIf="isLoggedIn()">{{ getCurrentUser().username }}</li>
-        <li *ngIf="isLoggedIn()" (click)="signout()">Sign out</li>
+        <li
+          [class.active]="isRouteActive('signout')"
+          *ngIf="isLoggedIn()"
+          (click)="signout()"
+        >
+          <a [routerLink]="['signout']">Sign out</a>
+        </li>
       </ul>
     </div>
   </nav>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ContentfulService } from '../../../services';
 import { Observable } from 'rxjs';
+import { CommentI } from '../../../interfaces';
 
 @Component({
   selector: 'app-blog-post',
@@ -15,7 +16,7 @@ export class BlogPostComponent implements OnInit {
   ) {}
 
   blogPost$: Observable<any> | undefined;
-  comments: Array<{ username: string; content: string }> = [];
+  comments: CommentI[] = [];
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {

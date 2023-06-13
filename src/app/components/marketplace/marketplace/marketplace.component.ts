@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ProductService } from '../../../services';
+import { Component, OnInit } from '@angular/core';
+import { NumberService, ProductService } from '../../../services';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ProductPopupComponent } from '../product-popup/product-popup.component';
+import { CartItemI, ProductI } from '../../../interfaces';
 
 @Component({
   selector: 'app-marketplace',
@@ -9,11 +10,13 @@ import { ProductPopupComponent } from '../product-popup/product-popup.component'
   styleUrls: ['./marketplace.component.scss'],
 })
 export class MarketplaceComponent implements OnInit {
-  products: any[] = [];
-  itemsQuantity = 0;
+  products: ProductI[] = [];
+  cartItems: CartItemI[] = [];
+  cartQuantities = 0;
 
   constructor(
     private readonly productService: ProductService,
+    private numberService: NumberService,
     private dialog: MatDialog
   ) {}
 
@@ -23,47 +26,37 @@ export class MarketplaceComponent implements OnInit {
     });
   }
 
-  openDialog(product: any) {
+  openDialog(product: ProductI) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
-    dialogConfig.data = product;
+    dialogConfig.data = { product };
 
     const dialogRef = this.dialog.open(ProductPopupComponent, dialogConfig);
 
-    // dialogRef.afterClosed().subscribe((result) => {
-    //   if (result && result.quantity > 0) {
-    //     const existingCartItem = this.cartItems.find(
-    //       (item) => item.id === result.id
-    //     );
-    //     if (existingCartItem) {
-    //       existingCartItem.quantity += result.quantity;
-    //     } else {
-    //       this.cartItems.push(result);
-    //     }
-    //   }
-    // });
+    dialogRef.afterClosed().subscribe((res) => {
+      if (res.event === 'AddToCart') {
+        const product = res.data.product;
+        this.cartItems.push({
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          quantity: res.data.quantity,
+        });
+
+        this.cartQuantities += res.data.quantity;
+      }
+    });
   }
 
-  numberWithCommas(x: string) {
-    x = x.toString();
-    var pattern = /(-?\d+)(\d{3})/;
-    while (pattern.test(x)) x = x.replace(pattern, '$1,$2');
-    return x;
+  getNumberWithCommas(num: number) {
+    return this.numberService.getNumberWithCommas(num);
   }
 
-  // getTotalPrice(): number {
-  //   let total = 0;
-  //   for (const item of this.cartItems) {
-  //     total += item.price * item.quantity;
-  //   }
-  //   return total;
-  // }
-
-  // removeItem(item: any): void {
-  //   const index = this.cartItems.indexOf(item);
-  //   if (index > -1) {
-  //     this.cartItems.splice(index, 1);
-  //   }
-  // }
+  getTotalOfCart() {
+    return this.cartItems.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+  }
 }

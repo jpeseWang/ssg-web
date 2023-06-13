@@ -16,24 +16,35 @@
           Find
         </button>
         <button mat-icon-button [matMenuTriggerFor]="menu">
-          <mat-icon [matBadge]="1" matBadgeColor="accent" class="mr-auto"
+          <mat-icon
+            [matBadge]="this.cartQuantities"
+            matBadgeColor="accent"
+            class="mr-auto"
             >shopping_cart</mat-icon
           >
         </button>
         <mat-menu #menu="matMenu" class="fixed">
           <div class="p-3 divide-y divide-solid">
             <div class="pd-3 flex justify-between">
-              <span class="mr-16">1 items</span>
-              <a routerLink="cart">View Cart</a>
+              <span class="mr-16">{{ this.cartQuantities }} items</span>
+              <a>View Cart</a>
             </div>
             <div class="py-3">
-              <div class="flex justify-between font-light mb-2">
-                Nike Air Force 1
-                <span class="font-bold">{{ "150" | currency : "USD" }}</span>
+              <div
+                class="flex justify-between font-light mb-2"
+                *ngFor="let item of this.cartItems"
+              >
+                {{ item.name }}
+                <span class="font-bold"
+                  >{{ item.quantity }} x
+                  {{ getNumberWithCommas(item.price) }}
+                </span>
               </div>
               <div class="flex justify-between py-3 font-light mb-2">
                 Total:
-                <span class="font-bold not-italic"> 150,000 VND </span>
+                <span class="font-bold not-italic">
+                  {{ getNumberWithCommas(getTotalOfCart()) }} VND
+                </span>
               </div>
               <div class="pt-3 flex justify-between">
                 <button
@@ -49,9 +60,9 @@
       </div>
     </div>
     <div class="horizontal-tabs">
-      <a href="#">Lifestyle</a>
-      <a href="#">Jordan</a>
-      <a href="#">Running</a>
+      <a href="#">Food</a>
+      <a href="#">Drink</a>
+      <a href="#">Fruits</a>
       <a href="#">Basketball</a>
       <a href="#">Football</a>
       <a href="#" style="color: #ea4c89">Go Pro</a>
@@ -93,8 +104,8 @@
                   {{ product.name | slice : 0 : 23 }}
                 </h2>
                 <p>{{ product.type }} Shoes</p>
-                <a href="#" class="price font-medium block"
-                  >{{ numberWithCommas(product.price) }},000 VND</a
+                <a class="price font-medium block"
+                  >{{ getNumberWithCommas(product.price) }} VND</a
                 >
               </div>
               <div class="card-footer ml-1 flex">

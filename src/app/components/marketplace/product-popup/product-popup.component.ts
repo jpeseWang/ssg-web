@@ -1,5 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Optional } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ProductI } from 'src/app/interfaces';
+import { NumberService } from 'src/app/services';
 
 @Component({
   selector: 'app-product-popup',
@@ -7,29 +9,44 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./product-popup.component.css'],
 })
 export class ProductPopupComponent implements OnInit {
-  products: any[] = [];
-  constructor(@Inject(MAT_DIALOG_DATA) public product: any) {}
+  quantity = 0;
+  product!: ProductI;
+
+  constructor(
+    public dialogRef: MatDialogRef<ProductPopupComponent>,
+    @Optional() @Inject(MAT_DIALOG_DATA) public data: any,
+    private numberService: NumberService
+  ) {
+    this.product = data.product;
+  }
   ngOnInit(): void {}
 
-  numberWithCommas(x: string) {
-    x = x.toString();
-    var pattern = /(-?\d+)(\d{3})/;
-    while (pattern.test(x)) x = x.replace(pattern, '$1,$2');
-    return x;
+  getNumberWithCommas(num: number) {
+    return this.numberService.getNumberWithCommas(num);
   }
 
-  addtoCart(product: any) {
-    if (product.quantity) {
-      product.quantity++;
+  add() {
+    this.quantity++;
+  }
+
+  reduce() {
+    if (this.quantity !== 0) {
+      this.quantity--;
+    }
+  }
+
+  addToCart() {
+    if (this.quantity !== 0) {
+      this.dialogRef.close({
+        event: 'AddToCart',
+        data: { product: this.product, quantity: this.quantity },
+      });
     } else {
-      product.quantity = 1;
+      this.dialogRef.close();
     }
-    console.log(product);
   }
 
-  removeCart(product: any) {
-    if (product.quantity) {
-      product.quantity--;
-    }
+  closeDialog() {
+    this.dialogRef.close();
   }
 }

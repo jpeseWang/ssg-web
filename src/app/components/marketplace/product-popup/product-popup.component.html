@@ -2,7 +2,7 @@
   <div class="header py-3 px-3">
     <button
       class="bg-white hover:bg-gray-100 text-gray-600 font-semibold py-2 px-4 border border-gray-200 rounded shadow ml-auto flex relative"
-      [mat-dialog-close]="{ name: product.name, price: product.price }"
+      (click)="closeDialog()"
     >
       X
     </button>
@@ -12,7 +12,7 @@
 
     <p class="text-gray-500">{{ product.type }} Shoes</p>
     <p class="text-black-700 font-medium text-medium">
-      {{ numberWithCommas(product.price) }},000 VND
+      {{ getNumberWithCommas(product.price) }} VND
     </p>
   </div>
   <div class="max-w-sm mx-auto bg-white shadow-md rounded-lg overflow-hidden">
@@ -33,7 +33,7 @@
     <div class="flex inline mt-4">
       <button
         class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
-        (click)="removeCart(product)"
+        (click)="reduce()"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -51,11 +51,11 @@
         </svg>
       </button>
       <div class="counter bg-gray-100 text-lg px-3 text-gray-500 translate-y-1">
-        {{ product.quantity || 0 }}
+        {{ this.quantity }}
       </div>
       <button
         class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
-        (click)="addtoCart(product)"
+        (click)="add()"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -75,9 +75,9 @@
     </div>
     <button
       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex ml-auto translate-y-1.5"
-      [mat-dialog-close]="true"
+      (click)="addToCart()"
     >
-      Done
+      Add to Cart
     </button>
   </mat-dialog-actions>
 </div>
