@@ -22,7 +22,8 @@ body {
 
 img {
   display: block;
-  max-width: 100%;
+  max-width: auto;
+  max-height: 177px;
 }
 
 :focus {
@@ -32,6 +33,7 @@ img {
 .responsive-wrapper {
   width: 90%;
   max-width: 1280px;
+
   margin-left: auto;
   margin-right: auto;
 }
@@ -188,7 +190,7 @@ img {
       justify-content: center;
       img {
         max-width: 85%;
-        max-height: 100%;
+        max-height: 177px;
       }
     }
 

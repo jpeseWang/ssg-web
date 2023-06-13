@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContentfulService } from '../../../services';
 import { Observable } from 'rxjs';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { BlogsCreateComponent } from '../blogs-create/blogs-create.component';
 
 @Component({
   selector: 'app-blogs',
@@ -16,6 +17,15 @@ export class BlogsComponent implements OnInit {
 
   blogPosts$: Observable<any> | undefined;
   isHearted: boolean = false;
+
+  openDialog() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(BlogsCreateComponent, dialogConfig);
+  }
 
   toggleHeart() {
     this.isHearted = !this.isHearted;

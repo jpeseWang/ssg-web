@@ -211,3 +211,11 @@ main > div > a:hover {
     width: 85%;
   }
 }
+@media screen and (min-width: 435px) and (max-width: 700px) {
+  iframe {
+    width: 55%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+  }
+}

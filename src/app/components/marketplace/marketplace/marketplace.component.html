@@ -23,7 +23,7 @@
             >shopping_cart</mat-icon
           >
         </button>
-        <mat-menu #menu="matMenu" class="fixed">
+        <mat-menu #menu="matMenu" class="fixed w-80">
           <div class="p-3 divide-y divide-solid">
             <div class="pd-3 flex justify-between">
               <span class="mr-16">{{ this.cartQuantities }} items</span>
@@ -31,13 +31,12 @@
             </div>
             <div class="py-3">
               <div
-                class="flex justify-between font-light mb-2"
+                class="flex justify-between font-light mb-2 border-b-2"
                 *ngFor="let item of this.cartItems"
               >
                 {{ item.name }}
-                <span class="font-bold"
-                  >{{ item.quantity }} x
-                  {{ getNumberWithCommas(item.price) }}
+                <span class="font-bold">
+                  {{ getNumberWithCommas(item.price) }} x {{ item.quantity }}
                 </span>
               </div>
               <div class="flex justify-between py-3 font-light mb-2">
@@ -102,7 +101,7 @@
                 <h2 class="bold text-lg block">
                   {{ product.name | slice : 0 : 23 }}
                 </h2>
-                <p>{{ product.type }} Shoes</p>
+                <p>{{ product.type }}</p>
                 <a class="price font-medium block"
                   >{{ getNumberWithCommas(product.price) }} VND</a
                 >

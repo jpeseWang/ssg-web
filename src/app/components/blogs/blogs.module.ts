@@ -5,14 +5,17 @@ import { BlogPostComponent } from './blog-post/blog-post.component';
 import { BlogsRoutingModule } from './blogs.routing';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { BlogsCreateComponent } from './blogs-create/blogs-create.component';
+import { NgxTiptapModule } from 'ngx-tiptap';
 
 @NgModule({
-  declarations: [BlogsComponent, BlogPostComponent],
-  imports: [CommonModule,
-     BlogsRoutingModule,
-     CKEditorModule,
-     MatDialogModule
-    ],
+  declarations: [BlogsComponent, BlogPostComponent, BlogsCreateComponent],
+  imports: [
+    CommonModule,
+    BlogsRoutingModule,
+    CKEditorModule,
+    MatDialogModule,
+    NgxTiptapModule,
+  ],
 })
 export class BlogsModule {}
