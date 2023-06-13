@@ -165,7 +165,7 @@ img {
   background-color: var(--c-background-primary);
   box-shadow: 0 3px 3px 0 rgba(#000, 0.05), 0 5px 15px 0 rgba(#000, 0.05);
   border-radius: 8px;
-  overflow: hidden;
+  overflow-x: auto;
   display: flex;
   flex-direction: column;
 }

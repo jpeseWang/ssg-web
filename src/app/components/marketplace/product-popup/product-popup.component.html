@@ -35,20 +35,47 @@
         class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
         (click)="removeCart(product)"
       >
-        Remove
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
       </button>
-      <div class="counter bg-gray-100 text-lg px-3 translate-y-0.5">
+      <div class="counter bg-gray-100 text-lg px-3 text-gray-500 translate-y-1">
         {{ product.quantity || 0 }}
       </div>
       <button
         class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
         (click)="addtoCart(product)"
       >
-        Add
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
       </button>
     </div>
     <button
       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex ml-auto translate-y-1.5"
+      [mat-dialog-close]="true"
     >
       Done
     </button>

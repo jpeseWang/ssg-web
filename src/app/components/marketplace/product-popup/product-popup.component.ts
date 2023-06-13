@@ -1,5 +1,4 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ProductService } from 'src/app/services';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -21,10 +20,9 @@ export class ProductPopupComponent implements OnInit {
 
   addtoCart(product: any) {
     if (product.quantity) {
-      // if quantity already exists on food object
       product.quantity++;
     } else {
-      product.quantity = 1; //if quantity does not exist on food object, add it
+      product.quantity = 1;
     }
     console.log(product);
   }

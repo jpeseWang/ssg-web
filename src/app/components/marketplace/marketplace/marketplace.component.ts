@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProductService } from '../../../services';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ProductPopupComponent } from '../product-popup/product-popup.component';
@@ -10,7 +10,8 @@ import { ProductPopupComponent } from '../product-popup/product-popup.component'
 })
 export class MarketplaceComponent implements OnInit {
   products: any[] = [];
-  cartItems: any[] = [];
+  private _cart: Cart = { items: [] };
+  itemsQuantity = 0;
 
   constructor(
     private readonly productService: ProductService,
