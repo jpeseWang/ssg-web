@@ -3,7 +3,7 @@ import { ContentfulService } from '../../../services';
 import { Observable } from 'rxjs';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { BlogsCreateComponent } from '../blogs-create/blogs-create.component';
-
+import { AuthService } from '../../../services';
 @Component({
   selector: 'app-blogs',
   templateUrl: './blogs.component.html',
@@ -12,7 +12,8 @@ import { BlogsCreateComponent } from '../blogs-create/blogs-create.component';
 export class BlogsComponent implements OnInit {
   constructor(
     private readonly contenfulService: ContentfulService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private authService: AuthService
   ) {}
 
   blogPosts$: Observable<any> | undefined;
@@ -33,5 +34,12 @@ export class BlogsComponent implements OnInit {
 
   ngOnInit() {
     this.blogPosts$ = this.contenfulService.getAllEntries();
+  }
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn();
+  }
+  signout() {
+    return this.authService.logout();
   }
 }

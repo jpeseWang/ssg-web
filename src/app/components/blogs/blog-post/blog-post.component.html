@@ -1,39 +1,140 @@
-<main *ngIf="blogPost$ | async as blogPost">
-  <div class="post-container">
-    <h1>
-      {{ $any(blogPost).fields.title }}
-    </h1>
-    <img [src]="$any(blogPost).fields.featuredImage.fields.file.url" />
-
-    <p class="author">Posted by @{{ $any(blogPost).fields.author }}</p>
-    <p class="summary">{{ $any(blogPost).fields.summary }}</p>
+<div class="bg-white py-24 sm:py-32" *ngIf="blogPost$ | async as blogPost">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div
-      class="content-container"
-      *ngFor="let content of $any(blogPost).fields.content.content"
+      class="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2"
     >
-      <p class="content1">
-        {{ content.content[0].value }}
-      </p>
+      <div class="lg:pr-4">
+        <div
+          class="relative overflow-hidden rounded-3xl bg-gray-900 px-6 pb-9 pt-64 shadow-2xl sm:px-12 lg:max-w-lg lg:px-8 lg:pb-8 xl:px-10 xl:pb-10"
+        >
+          <img
+            class="absolute inset-0 h-full w-full object-cover brightness-125 saturate-0"
+            [src]="$any(blogPost).fields.featuredImage.fields.file.url"
+            alt=""
+          />
+          <div class="absolute inset-0 bg-gray-900 mix-blend-multiply"></div>
+          <div
+            class="absolute left-1/2 top-1/2 -ml-16 -translate-x-1/2 -translate-y-1/2 transform-gpu blur-3xl"
+            aria-hidden="true"
+          ></div>
+          <figure class="relative isolate">
+            <svg
+              viewBox="0 0 162 128"
+              fill="none"
+              aria-hidden="true"
+              class="absolute -left-2 -top-4 -z-10 h-32 stroke-white/20"
+            >
+              <path
+                id="0ef284b8-28c2-426e-9442-8655d393522e"
+                d="M65.5697 118.507L65.8918 118.89C68.9503 116.314 71.367 113.253 73.1386 109.71C74.9162 106.155 75.8027 102.28 75.8027 98.0919C75.8027 94.237 75.16 90.6155 73.8708 87.2314C72.5851 83.8565 70.8137 80.9533 68.553 78.5292C66.4529 76.1079 63.9476 74.2482 61.0407 72.9536C58.2795 71.4949 55.276 70.767 52.0386 70.767C48.9935 70.767 46.4686 71.1668 44.4872 71.9924L44.4799 71.9955L44.4726 71.9988C42.7101 72.7999 41.1035 73.6831 39.6544 74.6492C38.2407 75.5916 36.8279 76.455 35.4159 77.2394L35.4047 77.2457L35.3938 77.2525C34.2318 77.9787 32.6713 78.3634 30.6736 78.3634C29.0405 78.3634 27.5131 77.2868 26.1274 74.8257C24.7483 72.2185 24.0519 69.2166 24.0519 65.8071C24.0519 60.0311 25.3782 54.4081 28.0373 48.9335C30.703 43.4454 34.3114 38.345 38.8667 33.6325C43.5812 28.761 49.0045 24.5159 55.1389 20.8979C60.1667 18.0071 65.4966 15.6179 71.1291 13.7305C73.8626 12.8145 75.8027 10.2968 75.8027 7.38572C75.8027 3.6497 72.6341 0.62247 68.8814 1.1527C61.1635 2.2432 53.7398 4.41426 46.6119 7.66522C37.5369 11.6459 29.5729 17.0612 22.7236 23.9105C16.0322 30.6019 10.618 38.4859 6.47981 47.558L6.47976 47.558L6.47682 47.5647C2.4901 56.6544 0.5 66.6148 0.5 77.4391C0.5 84.2996 1.61702 90.7679 3.85425 96.8404L3.8558 96.8445C6.08991 102.749 9.12394 108.02 12.959 112.654L12.959 112.654L12.9646 112.661C16.8027 117.138 21.2829 120.739 26.4034 123.459L26.4033 123.459L26.4144 123.465C31.5505 126.033 37.0873 127.316 43.0178 127.316C47.5035 127.316 51.6783 126.595 55.5376 125.148L55.5376 125.148L55.5477 125.144C59.5516 123.542 63.0052 121.456 65.9019 118.881L65.5697 118.507Z"
+              />
+              <use href="#0ef284b8-28c2-426e-9442-8655d393522e" x="86" />
+            </svg>
+            <img
+              src="https://tailwindui.com/img/logos/workcation-logo-white.svg"
+              alt=""
+              class="h-12 w-auto"
+            />
+            <blockquote class="mt-6 text-xl font-semibold leading-8 text-white">
+              <p class="content-container">
+                “People who love themselves, don’t hurt other people. The more
+                we hate ourselves, the more we want others to suffer.”
+              </p>
+            </blockquote>
+            <figcaption class="mt-6 text-sm leading-6 text-gray-300">
+              <strong class="font-semibold text-white">Posted by </strong>
+              @{{ $any(blogPost).fields.author }}
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div>
+        <div class="text-base leading-7 text-gray-700 lg:max-w-lg">
+          <p class="text-base font-semibold leading-7 text-indigo-600">
+            Daily blog post
+          </p>
+          <h1
+            class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+          >
+            {{ $any(blogPost).fields.title }}
+          </h1>
+          <div class="max-w-xl">
+            <p class="mt-6">
+              {{ $any(blogPost).fields.summary }}
+            </p>
+            <p
+              class="mt-8"
+              *ngFor="let content of $any(blogPost).fields.content.content"
+            >
+              {{ content.content[0].value }}
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-10 flex">
+          <a
+            [routerLink]="['blogs/']"
+            class="text-base font-semibold leading-7 text-indigo-600"
+            >Read more awesome blogs <span aria-hidden="true">&rarr;</span></a
+          >
+        </div>
+      </div>
     </div>
   </div>
-
+</div>
+<main *ngIf="blogPost$ | async as blogPost">
   <div class="comments-container">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" class="w-7 h-7 inline">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
-    </svg><h1 class="">Comments Section</h1>
-    
-    <div class="inputCmt inline"><img class="avatar" src="https://ibiettuot.com/wp-content/uploads/2021/10/avatar-mac-dinh.png" />
-      <input type="text" class="content commentInput" placeholder="Add a comment..."/>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="blue" class="w-5 h-5">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="{1.5}"
+      stroke="currentColor"
+      class="w-7 h-7 inline"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
+      />
+    </svg>
+    <h1 class="">Comments Section</h1>
+
+    <div class="inputCmt inline">
+      <img
+        class="avatar"
+        src="https://ibiettuot.com/wp-content/uploads/2021/10/avatar-mac-dinh.png"
+      />
+      <input
+        type="text"
+        class="content commentInput"
+        placeholder="Add a comment..."
+      />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="{1.5}"
+        stroke="blue"
+        class="w-5 h-5"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+        />
       </svg>
-      
     </div>
     <div class="comment" *ngFor="let comment of comments">
       <div class="username-container">
-      <img class="avatar " src="https://i.pinimg.com/originals/5f/ea/00/5fea00180081421b17d8ca8cbdec2923.jpg" /><p class="username">{{ comment.username }}</p></div>
+        <img
+          class="avatar"
+          src="https://i.pinimg.com/originals/5f/ea/00/5fea00180081421b17d8ca8cbdec2923.jpg"
+        />
+        <p class="username">{{ comment.username }}</p>
+      </div>
       <p class="contentShow">{{ comment.content }}</p>
-      <br>
+      <br />
     </div>
   </div>
 </main>

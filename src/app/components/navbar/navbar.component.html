@@ -34,17 +34,12 @@
         </li>
 
         <li [class.active]="isRouteActive('login')" *ngIf="!isLoggedIn()">
-          <a [routerLink]="['/auth/login']"><button>Login</button></a>
-        </li>
-        <li
-          [class.active]="isRouteActive('/auth/signup')"
-          *ngIf="!isLoggedIn()"
-        >
-          <a [routerLink]="['/auth/signup']">Sign up</a>
+          <a [routerLink]="['/auth/login']"><button>Login&rarr;</button></a>
         </li>
 
-        <!-- TODO: STYLE THESE -->
-        <li *ngIf="isLoggedIn()">{{ getCurrentUser().username }}</li>
+        <li class="user-login" *ngIf="isLoggedIn()">
+          {{ getCurrentUser().username }}
+        </li>
         <li
           [class.active]="isRouteActive('signout')"
           *ngIf="isLoggedIn()"

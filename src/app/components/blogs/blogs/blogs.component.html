@@ -1,54 +1,88 @@
-<div class="main-header">
-  <button (click)="openDialog()">
-    <h2
-      class="rounded-2xl bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
-    >
-      Create a post
-    </h2>
-  </button>
-  <div class="search">
-    <input type="text" placeholder="Search" class="border-solid" />
-    <button
-      type="submit"
-      class="rounded-md bg-slate-400 px-3.5 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
-    >
-      <i class="ph-magnifying-glass-bold"></i>
-      Find
-    </button>
-  </div>
-</div>
-<main *ngIf="blogPosts$ | async as blogPosts">
-  <div
-    class="blog-posts-container"
-    *ngFor="let blogPost of $any(blogPosts).items"
+<div class="ml-4 mt-2 flex-shrink-0">
+  <button
+    (click)="openDialog()"
+    *ngIf="isLoggedIn()"
+    type="button"
+    class="relative inline-flex items-center rounded-full bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
   >
-    <img [src]="blogPost.fields.featuredImage.fields.file.url" />
-    <h2>
-      <a [routerLink]="blogPost.sys.id">{{ blogPost.fields.title }}</a>
-    </h2>
+    Create new post
+  </button>
+</div>
 
-    <p class="author">@{{ blogPost.fields.author }}</p>
-    <p class="summary">{{ blogPost.fields.summary }}</p>
-    <div class="line">
-      <button class="heart-button" (click)="toggleHeart()">
-        <i [class]="isHearted ? 'fas fa-heart' : 'far fa-heart'"></i>
-      </button>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="w-6 h-6"
+<main *ngIf="blogPosts$ | async as blogPosts">
+  <div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          From the blog
+        </h2>
+        <p class="mt-2 text-lg leading-8 text-gray-600">
+          Learn how to enhance your relationship with our expert advice.
+        </p>
+      </div>
+
+      <div
+        class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
-        />
-      </svg>
+        <article
+          class="flex flex-col items-start justify-between"
+          *ngFor="let blogPost of $any(blogPosts).items"
+        >
+          <div class="relative w-full">
+            <img
+              [src]="blogPost.fields.featuredImage.fields.file.url"
+              alt=""
+              class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+            />
+            <div
+              class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"
+            ></div>
+          </div>
+          <div class="max-w-xl">
+            <div class="mt-8 flex items-center gap-x-4 text-xs">
+              <time datetime="2020-03-16" class="text-gray-500"
+                >Mar 16, 2023</time
+              >
+              <a
+                [routerLink]="blogPost.sys.id"
+                class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
+                >Read now</a
+              >
+            </div>
+            <div class="group relative">
+              <h3
+                class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600"
+              >
+                <a [routerLink]="blogPost.sys.id">
+                  <span class="absolute inset-0"></span>
+                  {{ blogPost.fields.title }}
+                </a>
+              </h3>
+              <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
+                {{ blogPost.fields.summary }}
+              </p>
+            </div>
+            <div class="relative mt-8 flex items-center gap-x-4">
+              <img
+                src="https://kynguyenlamdep.com/wp-content/uploads/2022/06/anh-gai-xinh-cuc-dep.jpg"
+                alt=""
+                class="h-10 w-10 rounded-full bg-gray-100"
+              />
+              <div class="text-sm leading-6">
+                <p class="font-semibold text-gray-900">
+                  <a href="#">
+                    <span class="absolute inset-0"></span>
+                    {{ blogPost.fields.author }}
+                  </a>
+                </p>
+                <p class="text-gray-600">Co-Founder / CTO</p>
+              </div>
+            </div>
+          </div>
+        </article>
 
-      <a [routerLink]="blogPost.sys.id" class="read-more-link">Read more</a>
+        <!-- More posts... -->
+      </div>
     </div>
   </div>
 </main>
