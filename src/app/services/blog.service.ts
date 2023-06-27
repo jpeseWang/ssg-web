@@ -14,6 +14,9 @@ export class BlogService {
   likeBlog(id: string) {
     return this.apiConfig.post<any>(`blogs/${id}/like`, {});
   }
+  unlikeBlog(id: string) {
+    return this.apiConfig.post<any>(`blogs/${id}/like`, {});
+  }
 
   addComment(id: string, value: string) {
     return this.apiConfig.post<any>(`blogs/${id}/comment`, { content: value });

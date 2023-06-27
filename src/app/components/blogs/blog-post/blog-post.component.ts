@@ -22,6 +22,7 @@ export class BlogPostComponent implements OnInit {
   comments: CommentI[] = [];
   blog: any;
   isLiked = false;
+  isHearted: boolean = false;
   postId!: string;
 
   ngOnInit(): void {
@@ -39,14 +40,19 @@ export class BlogPostComponent implements OnInit {
   }
 
   likeBlog() {
+    this.isHearted = !this.isHearted;
     if (!this.isLiked) {
       this.blogService.likeBlog(this.postId).subscribe((res) => {
         console.log(res);
       });
-
       this.blog.likes++;
-
       this.isLiked = true;
+    } else {
+      this.blogService.unlikeBlog(this.postId).subscribe((res) => {
+        console.log(res);
+      });
+      this.blog.likes--;
+      this.isLiked = false;
     }
   }
 
@@ -65,4 +71,6 @@ export class BlogPostComponent implements OnInit {
       this.comments = this.blog.comments;
     });
   }
+
+  toggleHeart() {}
 }
