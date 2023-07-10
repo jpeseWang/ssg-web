@@ -348,12 +348,33 @@
         <div class="flow-root">
           <div class="-my-12 divide-y divide-gray-200">
             <div class="py-12">
-              <div class="flex items-center">
+              <form class="w-full max-w-md lg:col-span-5 lg:pt-2">
+                <div class="flex gap-x-4">
+                  <label for="email-address" class="sr-only">Review</label>
+                  <input
+                    id="review"
+                    name="review"
+                    type="text"
+                    autocomplete="text"
+                    required
+                    class="min-w-0 flex-auto rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    placeholder="Enter your thoughts"
+                  />
+                  <button
+                    type="submit"
+                    class="flex-none rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+              <div class="flex items-center mt-8">
                 <img
                   src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
                   alt="Emily Selman."
                   class="h-12 w-12 rounded-full"
                 />
+
                 <div class="ml-4">
                   <h4 class="text-sm font-bold text-gray-900">Emily Selman</h4>
                   <div class="mt-1 flex items-center">
